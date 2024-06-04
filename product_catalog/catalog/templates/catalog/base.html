@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,17 +7,47 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
-  <body class="bg-green-50">
+  <body class="bg-gray-50">
     <!-- Navbar -->
-    <nav class="bg-green-600 p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="text-white text-xl font-bold">Company Name</div>
-        <div>
-          <a href="/" class="text-white px-4">Home</a>
+    <nav class="bg-white py-4 shadow">
+      <div
+        class="container mx-auto flex flex-wrap justify-between items-center"
+      >
+        <div class="flex items-center">
+          <img
+            src="{% static 'logo/logo.jpg' %}"
+            alt="Logo"
+            class="h-8 w-auto mr-4"
+          />
+          <div class="text-black text-2xl font-bold">Company Name</div>
+        </div>
+        <div class="hidden md:flex space-x-4">
+          <a href="/" class="text-black">Shop</a>
+          <a href="#" class="text-gray-600">About</a>
+          <a href="#" class="text-gray-600">Contact</a>
+        </div>
+        <div class="hidden md:flex space-x-4">
+          <a href="#" class="text-gray-600"
+            ><i class="fab fa-instagram" style="font-size: 24px"></i
+          ></a>
+          <a href="#" class="text-gray-600"
+            ><i class="fab fa-twitter" style="font-size: 24px"></i
+          ></a>
         </div>
       </div>
     </nav>
+
+    <!-- Categories Section -->
+    <div class="bg-white py-6">
+      <div class="container mx-auto flex flex-wrap justify-center space-x-6">
+        {% block categories %} {% endblock %}
+      </div>
+    </div>
 
     <!-- Content -->
     <div class="container mx-auto mt-4">{% block content %} {% endblock %}</div>
