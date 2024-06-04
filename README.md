@@ -23,7 +23,7 @@ A Django-based web application for managing and displaying a product catalog. Th
 1. **Clone the repository:**
 
    ```sh
-   git clone
+   git clone https://github.com/Mathurdanduprolu/Django_Product_Catalog.git
    cd django-product-catalog
    ```
 
